@@ -1,0 +1,30 @@
+# Mr Developer
+.DS_Store
+
+#Emacs cruft
+*~
+
+# node modules
+node_modules/
+
+# npm debug log
+npm-debug.log
+
+# app specific files that are generated as part of the asset pipeline
+
+# docker files
+.env
+Dockerfile
+docker-compose.yml
+
+# large data files
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+# dreamweaver
+_notes/

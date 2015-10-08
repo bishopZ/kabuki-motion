@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "author": "Bishop Zareh",
-  "description": "boilerplate for using heroku",
+  "description": "boilerplate for ninjas",
+  
   "main": "server/app.js",
   "scripts": {
     "start": "NODE_ENV=production node server/app.js",
@@ -19,8 +20,7 @@
     "lodash": "^3.5.0",
     "morgan": "~1.5.1",
     "react": "^0.12.2",
-    "react-router": "^0.12.4",
-    "serve-favicon": "~2.2.0"
+    "react-router": "^0.12.4"
   },
 
   "engines": {

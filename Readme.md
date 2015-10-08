@@ -17,5 +17,3 @@ run `npm start` to run in production mode
 2. `heroku apps:rename newname`
 3. `git push heroku master`
 4. `heroku open`
-
-run `npm start` to run in production mode

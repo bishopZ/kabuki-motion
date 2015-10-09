@@ -1,5 +1,9 @@
 
-# This project is in development.
+# in development
+
+## Motivation
+
+To build a basic single-page node application using react.js that already had the associated files needed to run it as a node.js server on Heroku.
 
 ## Installation
 
@@ -20,3 +24,11 @@ Or run `npm run production` to run the server in production mode.
 2. `heroku apps:rename newname`
 3. `git push heroku master`
 4. `heroku open`
+
+## Directories
+
+`/client` contains the react files that construct the site. Run webpack while working on these files.
+`/public` contains the public/static resources served by the server.
+`/server` contains files related to the node server.
+
+MIT License

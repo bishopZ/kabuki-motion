@@ -1,7 +1,7 @@
 # Mr Developer
 .DS_Store
 
-#Emacs cruft
+# Emacs cruft
 *~
 
 # node modules
@@ -9,8 +9,6 @@ node_modules/
 
 # npm debug log
 npm-debug.log
-
-# app specific files that are generated as part of the asset pipeline
 
 # docker files
 .env

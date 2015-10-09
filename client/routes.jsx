@@ -1,10 +1,6 @@
 
 import React from 'react/addons';
-import Router from 'react-router';
-
-var Route = Router.Route;
-var NotFoundRoute = Router.NotFoundRoute;
-var DefaultRoute = Router.DefaultRoute;
+import { Route, NotFoundRoute, DefaultRoute } from 'react-router';
 
 module.exports = (
   <Route name="root" path="/" handler={require('./components/navigation.jsx')}>

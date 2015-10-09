@@ -1,10 +1,10 @@
 import React from 'react/addons';
 import $ from 'jquery';
 
-import 'styles/main.scss';
-
 import Router from 'react-router';
 import Routes from './routes.jsx';
+
+import 'styles/main.scss';
 
 /**
  * Main entry-point
@@ -14,7 +14,7 @@ $(function() {
   // for developer tools
   window.React = React;
 
-  // React.initializeTouchEvents(true);
+  React.initializeTouchEvents(true);
 
   // services initialization
   // var Services = require('./services');

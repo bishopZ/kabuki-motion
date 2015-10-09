@@ -2,8 +2,8 @@
 # because they are development files that we dont want sent
 # to heroku
 
-server/application.js.map
-server/main.css.map
+public/application.js.map
+public/main.css.map
 
 
 # Mr Developer

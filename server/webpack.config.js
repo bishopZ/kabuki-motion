@@ -66,7 +66,6 @@ var commonConfiguration = {
     new ExtractTextPlugin("main.css"),
     new webpack.optimize.UglifyJsPlugin()
   ],
-  devtool: "source-map",
   resolve: {
     extensions: ['', '.react.js', '.js', '.jsx', '.scss'],
     modulesDirectories: [
@@ -78,6 +77,7 @@ var commonConfiguration = {
 
 // The configuration for development
 var config = deepExtend(commonConfiguration, {
+    devtool: "source-map",
     module: {
       preLoaders: [
         {

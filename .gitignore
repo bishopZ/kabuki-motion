@@ -1,3 +1,11 @@
+# dont check the rendered source maps in to the public repo
+# because they are development files that we dont want sent
+# to heroku
+
+server/application.js.map
+server/main.css.map
+
+
 # Mr Developer
 .DS_Store
 

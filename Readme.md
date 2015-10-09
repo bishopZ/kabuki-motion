@@ -31,4 +31,12 @@ Or run `npm run production` to run the server in production mode.
 `/public` contains the public/static resources served by the server.
 `/server` contains files related to the node server.
 
-MIT License
+## Credits
+
+React, Sass, Webpack, Node, MongoDB, Heroku
+https://github.com/choonkending/react-webpack-node
+
+React, Less, Gulp, Node, Heroku
+https://github.com/heroku/react-flux-starter
+
+### MIT License

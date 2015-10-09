@@ -1,17 +1,18 @@
-var $ = require('jquery');
+import React from 'react/addons';
+import $ from 'jquery';
+
+import 'styles/main.scss';
+
+import Router from 'react-router';
+import Routes from './routes.jsx';
 
 /**
  * Main entry-point
  */
 $(function() {
 
-  var React = require('react/addons');
-  var Router = require('react-router');
-
   // for developer tools
   window.React = React;
-
-  // alert(1);
 
   // React.initializeTouchEvents(true);
 
@@ -25,8 +26,6 @@ $(function() {
 
   // // for debugging - allows you to query the stores from the browser console
   // window._stores = Stores;
-
-  var Routes = require('./routes.jsx');
 
   var router = Router.create({
     routes: Routes,

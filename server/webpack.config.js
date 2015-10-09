@@ -28,9 +28,10 @@ var publicPath = "/";
 
 var commonConfiguration = {
 
+  name: "browser",
   context: path.join(__dirname, "..", "client"),
   entry: {
-    app: "main"
+    application: "main"
   },
   output: {
     // The output directory as absolute path
@@ -49,19 +50,20 @@ var commonConfiguration = {
         loader: "babel-loader?stage=2", // http://babeljs.io/docs/usage/experimental/
         include: path.join(__dirname, "..",  "client")
       },
+      { 
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css?module&localIdentName=[local]__[hash:base64:5]' +
+          '&sourceMap!sass?sourceMap&outputStyle=expanded' +
+          '&includePaths[]=' + (path.resolve(__dirname, '../node_modules'))),
+      }
       // { test: /\.png$/, loader: "url-loader" },
       // { test: /\.jpg$/, loader: "file-loader" },
       // { test: /\.html$/, loader: "html-loader" },
-      { test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?module&localIdentName=[local]__[hash:base64:5]' +
-          '&sourceMap!sass?sourceMap&outputStyle=expanded' +
-          '&includePaths[]=' + (path.resolve(__dirname, '../node_modules')))
-      }
     ]
   },
   plugins: [
-    // extract inline css from modules into separate files
-    // new ExtractTextPlugin("main.css"),
+    // extract inline css from modules into a separate css file
+    new ExtractTextPlugin("main.css"),
     new webpack.optimize.UglifyJsPlugin()
   ],
   devtool: "source-map",
@@ -70,22 +72,24 @@ var commonConfiguration = {
     modulesDirectories: [
       "client", "node_modules"
     ]
-  }
+  },
+            
 };
 
 // The configuration for development
 var config = deepExtend(commonConfiguration, {
-    name: "browser",
     module: {
-      preLoaders: [{
-        test: /\.js$|\.jsx$/,
-        exclude: /node_modules/,
-        loaders: ["eslint"]
-      }]
+      preLoaders: [
+        {
+          test: /\.js$|\.jsx$/,
+          exclude: /node_modules/,
+          loaders: ["eslint"]
+        }
+      ]
     }
 });
 
-// The configuration for production
+// // The configuration for production
 if (process.env.NODE_ENV == 'production') {
   config = deepExtend(commonConfiguration, {
     name: "server-side rendering",

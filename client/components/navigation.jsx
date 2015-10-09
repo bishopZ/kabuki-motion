@@ -3,9 +3,9 @@
 // window.jQuery = $;
 // require('bootstrap');
 
-var React = require('react/addons');
+import React from 'react/addons';
+import Router from 'react-router';
 
-var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 
 // var NavBar = require('./nav-bar.jsx'),

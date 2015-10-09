@@ -1,10 +1,10 @@
 
-var React = require('react/addons');
+import React from 'react/addons';
+import Router from 'react-router';
 
-var ReactRouter = require('react-router');
-var Route = ReactRouter.Route;
-var NotFoundRoute = ReactRouter.NotFoundRoute;
-var DefaultRoute = ReactRouter.DefaultRoute;
+var Route = Router.Route;
+var NotFoundRoute = Router.NotFoundRoute;
+var DefaultRoute = Router.DefaultRoute;
 
 module.exports = (
   <Route name="root" path="/" handler={require('./components/navigation.jsx')}>
@@ -15,7 +15,3 @@ module.exports = (
     <NotFoundRoute handler={require('./components/route-not-found.jsx')} />
   </Route>
 );
-
-  //   <Route name="seer" handler={require('./components/seer.jsx')} />
-  //   <Route name="melete" handler={require('./components/melete.jsx')} />
-

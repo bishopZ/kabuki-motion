@@ -1,7 +1,8 @@
 
-var React = require('react/addons');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
+import React from 'react/addons';
+import Router from 'react-router';
+
+var Link = Router.Link;
 
 module.exports = React.createClass({
   render: function() {

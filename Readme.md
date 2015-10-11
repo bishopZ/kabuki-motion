@@ -3,7 +3,7 @@
 
 ## Motivation
 
-To build a basic single-page node application using react.js that already had the associated files needed to run it as a node.js server on Heroku.
+A starter project for publishing a single-page web app that creates both a react.js development environment and live production server.
 
 ## Installation
 
@@ -34,9 +34,11 @@ Or run `npm run production` to run the server in production mode.
 ## Credits
 
 React, Sass, Webpack, Node, MongoDB, Heroku
+
 https://github.com/choonkending/react-webpack-node
 
 React, Less, Gulp, Node, Heroku
+
 https://github.com/heroku/react-flux-starter
 
 ### MIT License

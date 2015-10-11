@@ -47,7 +47,7 @@ var commonConfiguration = {
     loaders: [
       { 
         test: /\.js$|\.jsx$/,
-        loader: "babel-loader?stage=2", // http://babeljs.io/docs/usage/experimental/
+        loader: "babel-loader?stage=0", // http://babeljs.io/docs/usage/experimental/
         include: path.join(__dirname, "..",  "client")
       },
       { 

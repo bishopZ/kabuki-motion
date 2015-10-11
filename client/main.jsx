@@ -36,7 +36,7 @@ $(function() {
   });
 
   router.run(function(Handler) {
-    React.render(<Handler/>, document.body);
+    React.render(<Handler width={50} />, document.body);
   });
 
 });

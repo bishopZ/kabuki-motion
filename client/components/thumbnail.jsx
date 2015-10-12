@@ -14,10 +14,10 @@ module.exports = React.createClass({
     linkTo: PropTypes.string
   },
   onEnter: function(){
-    Actions.updateStore({ hover: true });
+    Actions.updateHover(true);
   },
   onLeave: function(){
-    Actions.updateStore({ hover: false });
+    Actions.updateHover(false);
   },
   render: function() {
     var divStyle = {

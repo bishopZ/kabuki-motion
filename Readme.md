@@ -33,8 +33,6 @@ Flux Architecture with Immutable, React and Alt
 
 #### Why alt?
 
-Having isomorphic React was one of my key criteria when choosing a Flux library, which helped narrow down the scope of libraries.
-
 I found alt's implementation to be clean and simple, and like the option of allowing us to create alt instances or using singletons (and flushing the stores). I also like the direction in which alt is heading.
 
 ## Installation

@@ -18,7 +18,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    const page = this.state.pageData;
+    const page = this.state.layout;
     const thumbnailWidth = page.get('width') / page.get('thumbnailsPerRow');
     const items = [
       {

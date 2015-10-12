@@ -3,7 +3,21 @@
 
 ## Motivation
 
-A starter project for publishing a single-page web app that creates both a react.js development environment and live production server.
+A starter project for publishing a single-page web app that creates both a react/flux development environment and live production server.
+
+## The Technology Stack
+
+### Server
+
+Heroku, Node, Express
+
+### Development Environment
+
+Webpack, Babel, Sass, ESLint, Uglifiy
+
+### Client
+
+Flux Architecture with Immutable, React and Alt
 
 ## Installation
 
@@ -33,12 +47,10 @@ Or run `npm run production` to run the server in production mode.
 
 ## Credits
 
-React, Sass, Webpack, Node, MongoDB, Heroku
+[react-webpack-node](https://github.com/choonkending/react-webpack-node)
+Alt, Immutable, React, Sass, Webpack, Node, MongoDB, Heroku
 
-https://github.com/choonkending/react-webpack-node
-
-React, Less, Gulp, Node, Heroku
-
-https://github.com/heroku/react-flux-starter
+[react-flux-starter](https://github.com/heroku/react-flux-starter)
+Flux, React, Less, Gulp, Node, Heroku
 
 ### MIT License

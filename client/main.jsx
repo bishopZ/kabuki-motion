@@ -3,6 +3,8 @@ import $ from 'jquery';
 
 import Router from 'react-router';
 import Routes from './routes.jsx';
+import Store from './stores/store';
+import AltContainer from 'alt/AltContainer';
 
 import 'styles/main.scss';
 
@@ -12,20 +14,14 @@ import 'styles/main.scss';
 $(function() {
 
   // for developer tools
-  window.React = React;
-
-  React.initializeTouchEvents(true);
-
-  // services initialization
-  // var Services = require('./services');
-  //     Services.initialize(window.EX.const.apiAccessToken);
-
-  // store initialization -- needs to be done before any component references
-  // var Stores = require('./stores');
-  // Stores.initialize();
+  // window.React = React;
 
   // // for debugging - allows you to query the stores from the browser console
   // window._stores = Stores;
+
+  React.initializeTouchEvents(true);
+
+  // store initialization -- needs to be done before any component references
 
   var router = Router.create({
     routes: Routes,
@@ -36,7 +32,12 @@ $(function() {
   });
 
   router.run(function(Handler) {
-    React.render(<Handler width={50} />, document.body);
+    React.render(
+      <AltContainer store={Store}>
+        <Handler />
+      </AltContainer>
+      , document.body
+    );
   });
 
 });

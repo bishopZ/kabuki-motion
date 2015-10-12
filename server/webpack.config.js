@@ -89,14 +89,14 @@ var config = deepExtend(commonConfiguration, {
     }
 });
 
-// // The configuration for production
+// The configuration for production
 if (process.env.NODE_ENV == 'production') {
   config = deepExtend(commonConfiguration, {
     name: "server-side rendering",
     target: "node",
     externals: [
       {
-        // 'alt/AltContainer': true,
+        'alt/AltContainer': true,
         'react/addons': true
       },
       /^[a-z\-0-9]+$/

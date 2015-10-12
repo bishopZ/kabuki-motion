@@ -2,6 +2,7 @@
 import React from 'react/addons';
 import {PropTypes} from 'react/addons';
 import {Link} from 'react-router';
+import Actions from '../actions/actions';
 
 module.exports = React.createClass({
   propTypes: {
@@ -11,6 +12,12 @@ module.exports = React.createClass({
     x: PropTypes.number,
     y: PropTypes.number,
     linkTo: PropTypes.string
+  },
+  onEnter: function(){
+    Actions.updateStore({ hover: true });
+  },
+  onLeave: function(){
+    Actions.updateStore({ hover: false });
   },
   render: function() {
     var divStyle = {
@@ -24,7 +31,12 @@ module.exports = React.createClass({
     };
     return (
       <Link to={this.props.linkTo} className="navbar">
-        <img className="thumbnail" src={this.props.src} style={divStyle} />
+        <img 
+          className="thumbnail" 
+          src={this.props.src} 
+          style={divStyle}
+          onMouseEnter={this.onEnter} 
+          onMouseLeave={this.onLeave} />
       </Link>
     );
   }

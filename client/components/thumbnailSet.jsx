@@ -14,21 +14,20 @@ module.exports = React.createClass({
   },
   render: function() {
     const width = this.props.width;
-    const thumbnails = _.map(this.props.items, (thumb, index) => {
-      return (
-        <Thumbnail 
-          id={index} 
-          src={thumb.src}
-          width={width}
-          proportion={1}
-          y={0}
-          x={width * (index)}
-          linkTo={thumb.linkTo} />
-      );
-    });
     return (
       <div className="thumbnailSet"> 
-        {thumbnails}
+        {_.map(this.props.items, (thumb, index) => {
+          return (
+            <Thumbnail 
+              id={index} 
+              src={thumb.src}
+              width={width}
+              proportion={1}
+              y={0}
+              x={width * (index)}
+              linkTo={thumb.linkTo} />
+          );
+        })}
       </div>
     );
   }

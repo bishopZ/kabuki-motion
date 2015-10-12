@@ -1,25 +1,25 @@
 
 import React from 'react/addons';
-import {PropTypes} from 'react/addons';
+import Store from '../stores/store';
 import ThumbnailSet from 'components/thumbnailSet';
-import $ from 'jquery';
-
 
 module.exports = React.createClass({
-  propTypes: {
-    width: PropTypes.number
-  },
-
-  // Stateful
   getInitialState: function() {
-    return {
-      width: $(window).width(),
-      thumbnailsPerRow: 5
-    };
+    return Store.getState();
+  },
+  componentDidMount() {
+    Store.listen(this.onChange);
+  },
+  componentWillUnmount() {
+    Store.unlisten(this.onChange);
+  },
+  onChange(state) {
+    this.setState(state);
   },
 
   render: function() {
-    const thumbnailWidth = this.state.width / this.state.thumbnailsPerRow;
+    const page = this.state.pageData;
+    const thumbnailWidth = page.get('width') / page.get('thumbnailsPerRow');
     const items = [
       {
         src: 'images/healerThumb.jpg',

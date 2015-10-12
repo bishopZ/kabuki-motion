@@ -1,0 +1,8 @@
+{
+  "name": "Kabuki",
+  "description": "A barebones Node.js app using ReactJS with Flux and Webpack as a module bundler",
+  "repository": "https://github.com/bishopz/kabuki",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static", "react", "webpack", "flux"],
+  "addons" : []
+}

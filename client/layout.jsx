@@ -1,16 +1,8 @@
 import React from 'react/addons';
 import {RouteHandler} from 'react-router';
-import Actions from '../actions/actions';
+import Actions from 'actions/actions';
 
 module.exports = React.createClass({
-
-  handleResize: function(e) {
-    Actions.updateWindowSize();
-  },
-  handleWheel: function(e) {
-    Actions.updateWheel(e);
-  },
-
   componentDidMount: function() {
     window.addEventListener('resize', this.handleResize);
     window.addEventListener('wheel', this.handleWheel);
@@ -22,6 +14,14 @@ module.exports = React.createClass({
 
   render: function() {
     return (<RouteHandler />);
+  },
+
+  handleResize: function(ev) {
+    Actions.updateWindowSize(ev);
+  },
+  handleWheel: function(ev) {
+    Actions.updateWheel(ev);
   }
+
 
 });

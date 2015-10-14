@@ -13,22 +13,11 @@ import 'styles/main.scss';
  */
 $(function() {
 
-  // for developer tools
-  // window.React = React;
-
-  // // for debugging - allows you to query the stores from the browser console
-  // window._stores = Stores;
-
   React.initializeTouchEvents(true);
-
-  // store initialization -- needs to be done before any component references
 
   var router = Router.create({
     routes: Routes,
-    location: Router.HistoryLocation,
-    onError: function() {
-      // alert('unexpected error in Router');
-    }
+    location: Router.HistoryLocation
   });
 
   router.run(function(Handler) {

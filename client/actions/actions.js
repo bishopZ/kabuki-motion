@@ -6,10 +6,10 @@ class Actions {
     this.dispatch(newData);
   }
   updateWindowSize(newSize) {
-  	this.dispatch(newSize);
+    this.dispatch(newSize);
   }
   updateWheel(event) {
-  	this.dispatch(event);
+    this.dispatch(event);
   }
 
 }

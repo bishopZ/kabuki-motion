@@ -20,24 +20,29 @@ module.exports = React.createClass({
     Actions.updateHover(false);
   },
   render: function() {
-    var divStyle = {
-      height: this.props.width / this.props.proportion,
-      width: this.props.width,
-      position: 'absolute',
-      top: this.props.y,
-      left: this.props.x,
-      zIndex: 1,
-      transition: 'all .2s ease-in-out'
-    };
+    this.divStyle.top = this.props.y;
+    this.divStyle.left = this.props.x;
+    this.divStyle.height = this.props.width / this.props.proportion;
+    this.divStyle.width = this.props.width;
+
     return (
       <Link to={this.props.linkTo} className="navbar">
         <img 
           className="thumbnail" 
           src={this.props.src} 
-          style={divStyle}
+          style={this.divStyle}
           onMouseEnter={this.onEnter} 
           onMouseLeave={this.onLeave} />
       </Link>
     );
+  },
+  divStyle: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    height: 0,
+    width: 0,
+    transition: 'all .2s ease-in-out'
   }
 });

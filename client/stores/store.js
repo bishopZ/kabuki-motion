@@ -4,15 +4,14 @@ import Actions from '../actions/actions';
 import $ from 'jquery';
 
 class Store {
-  constructor() {
 
+  constructor() {
     this.layout = Immutable.Map({
       width: $(window).width(),
       height: $(window).height(),
       thumbnailsPerRow: 5,
       wheel: null
     });
-
     this.bindListeners({
       handleHover: Actions.UPDATE_HOVER,
       handleResize: Actions.UPDATE_WINDOW_SIZE,
@@ -34,7 +33,7 @@ class Store {
       width: newSize.width, 
       height: newSize.height
     });
-  },
+  }
   handleWheel(event) {
     this.layout = this.layout.merge({
       wheel: event

@@ -23,7 +23,9 @@ module.exports = React.createClass({
             width: this.props.width,
             top: 0,
             left: width * index,
-            zIndex: 1
+            zIndex: 1,
+            position: 'absolute',
+            transition: 'all .2s ease-in-out'
           };
 
           if (thumb.hover) {
@@ -35,8 +37,8 @@ module.exports = React.createClass({
           }
           return (
             <Thumbnail 
-              key={index} 
-              id={index} 
+              key={index} // react wants this
+              id={index} // we use this one
               src={thumb.src}
               linkTo={thumb.linkTo} 
               style={style} />

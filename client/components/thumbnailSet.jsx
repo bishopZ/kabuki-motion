@@ -9,7 +9,7 @@ module.exports = React.createClass({
     width: PropTypes.number,
     items: PropTypes.arrayOf(PropTypes.shape({
       src: PropTypes.string,
-      linkTo: PropTypes.number
+      linkTo: PropTypes.string
     }))
   },
   render: function() {
@@ -19,7 +19,7 @@ module.exports = React.createClass({
         {_.map(this.props.items, (thumb, index) => {
           return (
             <Thumbnail 
-              id={index} 
+              key={index} 
               src={thumb.src}
               width={width}
               proportion={1}

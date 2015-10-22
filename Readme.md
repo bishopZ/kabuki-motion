@@ -7,7 +7,7 @@ A starter project for publishing a single-page web app that creates both a react
 
 The aim of this repo is to incorporate the best practices to building a non-trivial apps with Reactjs and Node.
 
-| React + alt(flux) + Immutable + Node/Express + Heroku |
+| React + flux (alt) + Immutable + Node/Express + Heroku |
 
 ## Demo site:
 

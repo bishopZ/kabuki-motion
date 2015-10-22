@@ -63,8 +63,7 @@ var commonConfiguration = {
   },
   plugins: [
     // extract inline css from modules into a separate css file
-    new ExtractTextPlugin("main.css"),
-    new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin("main.css")
   ],
   resolve: {
     extensions: ['', '.react.js', '.js', '.jsx', '.scss'],
@@ -101,6 +100,11 @@ if (process.env.NODE_ENV == 'production') {
       },
       /^[a-z\-0-9]+$/
     ],
+    plugins: [
+      // extract inline css from modules into a separate css file
+      new ExtractTextPlugin("main.css"),
+      new webpack.optimize.UglifyJsPlugin()
+    ]
   });
 }
 

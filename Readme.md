@@ -51,9 +51,10 @@ Or run `npm run production` to run the server in production mode, without lintin
 
 0. Install the heroku toolbelt
 1. `heroku create`
-2. `heroku apps:rename newname`
-3. `git push heroku master`
-4. `heroku open`
+2. `heroku config:set NODE_ENV=production`
+3. `heroku apps:rename newname`
+4. `git push heroku master`
+5. `heroku open`
 
 ## Directories
 

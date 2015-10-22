@@ -10,7 +10,8 @@
   "scripts": {
     "production": "NODE_ENV=production node server/app.js",
     "start": "NODE_ENV=development node server/app.js",
-    "build": "webpack --progress --colors --config server/webpack.config.js",
+    "build": "NODE_ENV=development webpack --progress --colors --config server/webpack.config.js",
+    "production-build": "NODE_ENV=production webpack --progress --colors --config server/webpack.config.js",
     "watch": "webpack --watch --progress --config server/webpack.config.js"
   },
 

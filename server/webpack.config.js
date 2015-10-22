@@ -61,10 +61,6 @@ var commonConfiguration = {
       // { test: /\.html$/, loader: "html-loader" },
     ]
   },
-  plugins: [
-    // extract inline css from modules into a separate css file
-    new ExtractTextPlugin("main.css")
-  ],
   resolve: {
     extensions: ['', '.react.js', '.js', '.jsx', '.scss'],
     modulesDirectories: [
@@ -74,22 +70,9 @@ var commonConfiguration = {
             
 };
 
-// The configuration for development
-var config = deepExtend(commonConfiguration, {
-    devtool: "source-map",
-    module: {
-      preLoaders: [
-        {
-          test: /\.js$|\.jsx$/,
-          exclude: /node_modules/,
-          loaders: ["eslint"]
-        }
-      ]
-    }
-});
-
 // The configuration for production
 console.log('node environment:' + process.env.NODE_ENV);
+var config;
 
 if (process.env.NODE_ENV == 'production') {
   config = deepExtend(commonConfiguration, {
@@ -101,13 +84,31 @@ if (process.env.NODE_ENV == 'production') {
         'react/addons': true
       },
       /^[a-z\-0-9]+$/
-    ],
-    plugins: [
-      // extract inline css from modules into a separate css file
-      new ExtractTextPlugin("main.css"),
-      new webpack.optimize.UglifyJsPlugin()
     ]
   });
+  config.plugins = [
+    // extract inline css from modules into a separate css file
+    new ExtractTextPlugin("main.css"),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+} else {
+  // The configuration for development
+  config = deepExtend(commonConfiguration, {
+      devtool: "source-map",
+      module: {
+        preLoaders: [
+          {
+            test: /\.js$|\.jsx$/,
+            exclude: /node_modules/,
+            loaders: ["eslint"]
+          }
+        ]
+      }
+  });
+  config.plugins = [
+    // extract inline css from modules into a separate css file
+    new ExtractTextPlugin("main.css")
+  ]
 }
 
 module.exports = [config];

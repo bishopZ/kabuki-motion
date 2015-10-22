@@ -4,8 +4,8 @@ import _ from 'lodash';
 
 class Actions {
 
-  updateHover(newData) {
-    this.dispatch(newData);
+  updateHover(hoverId) {
+    this.dispatch(hoverId);
   }
   updateWindowSize() {
     var self = this;
@@ -17,7 +17,6 @@ class Actions {
     }, 100);
   }
   updateWheel(event) {
-    // console.log(event);
     this.dispatch(event);
   }
 

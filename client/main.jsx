@@ -1,32 +1,26 @@
-import React from 'react/addons';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import $ from 'jquery';
-
-import Router from 'react-router';
-import Routes from './routes.jsx';
-import Store from './stores/store';
-import AltContainer from 'alt/AltContainer';
-
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import Router, { Route } from 'react-router';
 import 'styles/main.scss';
 
-/**
- * Main entry-point
- */
+// Main entry-point 
 $(function() {
 
-  React.initializeTouchEvents(true);
+  const Index = require('./views/index.jsx');
 
-  var router = Router.create({
-    routes: Routes,
-    location: Router.HistoryLocation
-  });
+  var history = createBrowserHistory();
 
-  router.run(function(Handler) {
-    React.render(
-      <AltContainer store={Store}>
-        <Handler />
-      </AltContainer>
-      , document.body
-    );
-  });
+  ReactDOM.render(
+    <Router history={history}>
+      <Route path="/" component={Index} />
+      <Route path="healer" component={require('./views/healer.jsx')} />
+      <Route path="seer" component={require('./views/seer.jsx')} />
+      <Route path="melete" component={require('./views/melete.jsx')} />
+      <Route path="*" component={require('./views/route-not-found.jsx')} />
+    </Router>
+    , $('#app')[0]
+  );
 
-});
+});         

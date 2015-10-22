@@ -10,7 +10,8 @@ class Store {
       width: $(window).width(),
       height: $(window).height(),
       thumbnailsPerRow: 5,
-      wheel: null
+      wheel: null,
+      hover: false
     });
     this.bindListeners({
       handleHover: Actions.UPDATE_HOVER,
@@ -19,14 +20,9 @@ class Store {
     });
   }
 
-  handleHover(hover) {
-    if (hover === true) {
-      // this.layout = this.layout.set('width', $(window).width()+100);
-      this.emitChange();
-    } else {
-      // this.layout = this.layout.set('width', $(window).width());
-      this.emitChange();
-    }
+  handleHover(hoverKey) {
+    this.layout = this.layout.set('hover', hoverKey);
+    this.emitChange();
   }
   handleResize(newSize) {
     this.layout = this.layout.merge({

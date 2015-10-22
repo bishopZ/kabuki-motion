@@ -1,5 +1,5 @@
 
-import React from 'react/addons';
+import React from 'react';
 
 module.exports = React.createClass({
   render: function() {

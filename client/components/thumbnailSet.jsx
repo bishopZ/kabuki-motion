@@ -1,6 +1,5 @@
 
-import React from 'react/addons';
-import {PropTypes} from 'react/addons';
+import React, {PropTypes} from 'react';
 import Thumbnail from 'components/thumbnail';
 import _ from 'lodash';
 
@@ -9,7 +8,8 @@ module.exports = React.createClass({
     width: PropTypes.number,
     items: PropTypes.arrayOf(PropTypes.shape({
       src: PropTypes.string,
-      linkTo: PropTypes.string
+      linkTo: PropTypes.string,
+      hover: PropTypes.bool
     }))
   },
   render: function() {
@@ -20,12 +20,14 @@ module.exports = React.createClass({
           return (
             <Thumbnail 
               key={index} 
+              id={index} 
               src={thumb.src}
               width={width}
               proportion={1}
               y={0}
               x={width * (index)}
-              linkTo={thumb.linkTo} />
+              linkTo={thumb.linkTo}
+              hover={thumb.hover} />
           );
         })}
       </div>

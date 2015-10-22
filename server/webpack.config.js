@@ -90,6 +90,7 @@ var config = deepExtend(commonConfiguration, {
 
 // The configuration for production
 console.log('node environment:' + process.env.NODE_ENV);
+
 if (process.env.NODE_ENV == 'production') {
   config = deepExtend(commonConfiguration, {
     name: "server-side rendering",

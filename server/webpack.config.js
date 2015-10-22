@@ -70,21 +70,14 @@ var commonConfiguration = {
             
 };
 
-// The configuration for production
 console.log('node environment:' + process.env.NODE_ENV);
 var config;
 
+// The configuration for production
 if (process.env.NODE_ENV == 'production') {
   config = deepExtend(commonConfiguration, {
     name: "server-side rendering",
-    target: "node",
-    externals: [
-      {
-        'alt/AltContainer': true,
-        'react/addons': true
-      },
-      /^[a-z\-0-9]+$/
-    ]
+    target: "node"
   });
   config.plugins = [
     // extract inline css from modules into a separate css file

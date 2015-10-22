@@ -14,20 +14,32 @@ module.exports = React.createClass({
   },
   render: function() {
     const width = this.props.width;
+    
     return (
       <div className="thumbnailSet"> 
         {_.map(this.props.items, (thumb, index) => {
+          var style = {
+            height: this.props.width,
+            width: this.props.width,
+            top: 0,
+            left: width * index,
+            zIndex: 1
+          };
+
+          if (thumb.hover) {
+            style.top -= style.height * 0.1;
+            style.left -= style.width * 0.1;
+            style.height *= 1.2;
+            style.width *= 1.2;
+            style.zIndex = 2;
+          }
           return (
             <Thumbnail 
               key={index} 
               id={index} 
               src={thumb.src}
-              width={width}
-              proportion={1}
-              y={0}
-              x={width * (index)}
-              linkTo={thumb.linkTo}
-              hover={thumb.hover} />
+              linkTo={thumb.linkTo} 
+              style={style} />
           );
         })}
       </div>

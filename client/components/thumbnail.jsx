@@ -2,18 +2,15 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import Actions from '../actions/actions';
+import _ from 'lodash';
 
 module.exports = React.createClass({
   propTypes: {
     key: PropTypes.number,
     id: PropTypes.number,
     src: PropTypes.string,
-    width: PropTypes.number,
-    proportion: PropTypes.number,
-    x: PropTypes.number,
-    y: PropTypes.number,
-    linkTo: PropTypes.string,
-    hover: PropTypes.bool
+    style: PropTypes.object,
+    linkTo: PropTypes.string
   },
   onEnter: function(){
     Actions.updateHover(this.props.id);
@@ -22,31 +19,19 @@ module.exports = React.createClass({
     Actions.updateHover(false);
   },
   render: function() {
-    this.divStyle.top = this.props.y;
-    this.divStyle.left = this.props.x;
-    this.divStyle.height = this.props.width / this.props.proportion;
-    this.divStyle.width = this.props.width;
-    this.divStyle.zIndex = 1;
-
-    if (this.props.hover) {
-      this.divStyle.top -= this.divStyle.height * 0.1;
-      this.divStyle.left -= this.divStyle.width * 0.1;
-      this.divStyle.height *= 1.2;
-      this.divStyle.width *= 1.2;
-      this.divStyle.zIndex = 2;
-    }
-
+    var style = _.extend(this.divStyle, this.props.style);
     return (
       <Link to={'/' + this.props.linkTo} className="navbar">
         <img 
           className="thumbnail" 
           src={this.props.src} 
-          style={this.divStyle}
           onMouseEnter={this.onEnter} 
-          onMouseLeave={this.onLeave} />
+          onMouseLeave={this.onLeave}
+          style={style} />
       </Link>
     );
   },
+  // default styles
   divStyle: {
     position: 'absolute',
     top: 0,

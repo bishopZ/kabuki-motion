@@ -5,7 +5,7 @@
 
 A starter project for publishing a single-page web app that creates both a react/flux development environment and live production server.
 
-The aim of this repo is to incorporate the best practices to building a non-trivial apps with Reactjs and Node.
+The aim of this repo is to incorporate the best practices to building a non-trivial apps with Reactjs v0.14 and Node.
 
 | React + flux (alt) + Immutable + Node/Express + Heroku |
 

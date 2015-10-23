@@ -17,13 +17,9 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 
 | React + Flux (Alt) + Immutable + Node/Express + Heroku |
 
-===============
-
 ## Heroku Demo Site
 
 [http://kabuki.venicetexas.com/](http://kabuki.venicetexas.com/)
-
-===============
 
 ## The Technology Stack
 
@@ -59,8 +55,6 @@ alt is a wrapper on flux. I found alt's implementation to be clean and simple co
 
 For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a more powerful alternative for React's TransitionGroup.
 
-===============
-
 ## Installation
 
 1. Install npm
@@ -85,8 +79,6 @@ Or run `npm run production` to run the server in production mode, without lintin
 1. `git push heroku master`
 1. `heroku open`
 
-===============
-
 ## Directories
 
 `/client` contains the react files that construct the site. Run webpack while editing these files to see your changes live in the browser.
@@ -99,16 +91,12 @@ Or run `npm run production` to run the server in production mode, without lintin
 `/server/routes.js` creates the node server's routing
 `/server/view.ejs` is the HTML view for the React's single-page application
 
-===============
-
 ## How to Contribute:
 
 1. Any suggestions/improvements/comments/bugs can be in the form of Pull Requests, or creating an issue.
 1. Coding guidelines:
    - [Airbnb's Style Guide](https://github.com/airbnb/javascript)
    - [bendc's frontend guidelines](https://github.com/bendc/frontend-guidelines)
-
-===============
 
 ## Credits
 
@@ -117,8 +105,6 @@ Or run `npm run production` to run the server in production mode, without lintin
 [react-webpack-node](https://github.com/choonkending/react-webpack-node) - Alt, Immutable, React, Sass, Webpack, Node, MongoDB, Heroku
 
 [react-flux-starter](https://github.com/heroku/react-flux-starter) - Flux, React, Less, Gulp, Node, Heroku
-
-===============
 
 # License
 

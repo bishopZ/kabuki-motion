@@ -1,6 +1,5 @@
 
-[![npm version](https://badge.fury.io/js/react-webpack-node.svg)](http://badge.fury.io/js/react-webpack-node)
-<img href="https://gratipay.com/~choonkending/" src="https://img.shields.io/gratipay/choonkending.svg">
+[![npm version](https://badge.fury.io/js/kabuki-motion.svg)](https://badge.fury.io/js/kabuki-motion)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 

@@ -1,0 +1,21 @@
+{
+  "name": "kabuki-motion",
+  "version": "0.0.1",
+  "homepage": "kabuki.venicetexas.com",
+  "authors": [
+    "bishopz <eduatx@gmail.com>"
+  ],
+  "description": "boilerplate for web animators",
+  "keywords": [
+    "web",
+    "animation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

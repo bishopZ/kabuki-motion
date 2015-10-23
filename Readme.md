@@ -1,37 +1,40 @@
 
+[![npm version](https://badge.fury.io/js/react-webpack-node.svg)](http://badge.fury.io/js/react-webpack-node)
+<img href="https://gratipay.com/~choonkending/" src="https://img.shields.io/gratipay/choonkending.svg">
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Motivation
 
-Kabuki is a starter project for publishing a single-page web app with web animators in mind. It creates both a react/flux development environment and live production server.
+Kabuki-motion is a starter project for publishing a single-page web app with web animators in mind. It creates both a react/flux development environment and live production server.
 
 The react application comes pre-built with one-directional flux architecture and example components that make use of the React-Motion library.
 
 The aim of this repo is to incorporate the best practices to building a non-trivial apps with Reactjs v0.14 that include Heroku support.
 
-Other boilerplates that include Heroku support also require the MongoDB addon, which is freenow, but may not be in the future. This library does not require any Heroku addons.
+Other boilerplates that include Heroku support also require the MongoDB addon, which is free now, but may not be in the future. This library does not require any Heroku addons.
 
-| React + flux (alt) + Immutable + Node/Express + Heroku |
+| React + Flux (Alt) + Immutable + Node/Express + Heroku |
 
 ## Heroku Demo Site
 
-[https://kabuki.venicetexas.com/](https://kabuki.venicetexas.com/)
+[http://kabuki.venicetexas.com/](http://kabuki.venicetexas.com/)
 
 ## The Technology Stack
 
 ### Server
 
-• Heroku
-• Node
-• Express
+* Heroku
+* Node
+* Express
 
 ### Development Environment
 
-• Webpack
-• Babel
-• Sass
-• ESLint
-• Uglifiy
+* Webpack
+* Babel
+* Sass
+* ESLint
+* Uglifiy
 
 #### Why Webpack?
 
@@ -39,9 +42,9 @@ While Gulp is an easier to use syntax, Webpack provides a more professional appr
 
 ### Client
 
-• React v0.14
-• Flux Architecture with Immutable and Alt
-• React-Motion for preformant animation
+* React v0.14
+* Flux Architecture with Immutable and Alt
+* React-Motion for preformant animation
 
 #### Why alt?
 
@@ -59,7 +62,7 @@ For 95% of use-cases of animating components, we don't have to resort to using h
 2. `npm start` to run the server in development mode
 3. Goto http://localhost:5000 in your browser
 
-## Local Development Environment
+## Running the Local Development Environment
 
 1. `npm run watch` to run webpack in watch mode
 2. in a new terminal window `npm start` to run the server in development mode
@@ -67,7 +70,7 @@ For 95% of use-cases of animating components, we don't have to resort to using h
 
 Or run `npm run production` to run the server in production mode, without linting and sourcemaps. The raw framework is about 250k, everything else is content.
 
-## Running on the Web
+## Running the Server on the Web
 
 0. Install the heroku toolbelt
 1. `heroku create`

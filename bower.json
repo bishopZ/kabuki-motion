@@ -12,8 +12,20 @@
     "url": "git://github.com/bishopZ/kabuki-motion.git"
   },
   "keywords": [
-    "web",
-    "animation"
+    "heroku",
+    "node",
+    "express",
+    "react",
+    "sass",
+    "eslint",
+    "webpack",
+    "react-motion",
+    "flux",
+    "alt",
+    "animation",
+    "kabuki",
+    "animation",
+    "web-animation"
   ],
   "main": [
     "public/application.js",

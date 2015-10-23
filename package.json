@@ -6,8 +6,20 @@
   "description": "boilerplate for web animators",
   "repository": "https://github.com/bishopZ/kabuki-motion",
   "keywords": [
-    "web",
-    "animation"
+    "heroku",
+    "node",
+    "express",
+    "react",
+    "sass",
+    "eslint",
+    "webpack",
+    "react-motion",
+    "flux",
+    "alt",
+    "animation",
+    "kabuki",
+    "animation",
+    "web-animation"
   ],
   "main": "server/app.js",
   "scripts": {

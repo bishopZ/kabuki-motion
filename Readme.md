@@ -87,13 +87,13 @@ Or run `npm run production` to run the server in production mode, without lintin
 `/public` contains the public, static resources served by the server, and the rendered application javascript/css.
 
 `/server` contains files related to the node server.
-`/server/app.js` creates the node server
-`/server/routes.js` creates the node server's routing
-`/server/view.ejs` is the HTML view for the React's single-page application
+`/server/app.js` creates the node server.
+`/server/routes.js` creates the node server's routing.
+`/server/view.ejs` is the HTML view for the React single-page application.
 
 # How to Contribute
 
-1. Any suggestions/improvements/comments/bugs can be in the form of Pull Requests, or creating an issue.
+1. Any suggestions/improvements/comments/bugs can be in the form of a Pull Requests or Github issue.
 1. Coding guidelines:
    - [Airbnb's Style Guide](https://github.com/airbnb/javascript)
    - [bendc's frontend guidelines](https://github.com/bendc/frontend-guidelines)

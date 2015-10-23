@@ -1,8 +1,22 @@
 {
   "name": "Kabuki",
-  "description": "A barebones Node.js app using ReactJS with Flux and Webpack as a module bundler",
+  "description": "boilerplate for web animators",
   "repository": "https://github.com/bishopz/kabuki",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static", "react", "webpack", "flux"],
-  "addons" : []
+  "keywords": [
+  	"heroku",
+    "node",
+    "express",
+    "react",
+    "sass",
+    "eslint",
+    "webpack",
+    "react-motion",
+    "flux",
+    "alt",
+    "animation",
+    "kabuki",
+    "animation",
+    "web-animation"
+  ]
 }

@@ -1,4 +1,6 @@
 
+![Kabuki](https://s-media-cache-ak0.pinimg.com/736x/bf/5b/71/bf5b71d406c0c8d48a9e313b64edf663.jpg =250x)
+
 [![npm version](https://badge.fury.io/js/kabuki-motion.svg)](https://badge.fury.io/js/kabuki-motion)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

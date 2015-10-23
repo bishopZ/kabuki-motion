@@ -25,17 +25,17 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 
 ### Server
 
-* Heroku
-* Node
-* Express
+- Heroku
+- Node
+- Express
 
 ### Development Environment
 
-* Webpack
-* Babel
-* Sass
-* ESLint
-* Uglifiy
+- Webpack
+- Babel
+- Sass
+- ESLint
+- Uglifiy
 
 #### Why Webpack?
 
@@ -43,9 +43,9 @@ While Gulp is an easier to use syntax, Webpack provides a more professional appr
 
 ### Client
 
-* React v0.14
-* Flux Architecture with Immutable and Alt
-* React-Motion for preformant animation
+- React v0.14
+- Flux Architecture with Immutable and Alt
+- React-Motion for preformant animation
 
 #### Why alt?
 

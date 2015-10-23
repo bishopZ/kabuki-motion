@@ -5,7 +5,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Motivation
+# Motivation
 
 Kabuki-motion is a starter project for publishing a single-page web app with web animators in mind. It creates both a react/flux development environment and live production server.
 
@@ -21,15 +21,15 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 
 [http://kabuki.venicetexas.com/](http://kabuki.venicetexas.com/)
 
-## The Technology Stack
+# The Technology Stack
 
-### Server
+## Server
 
 + Heroku
 + Node
 + Express
 
-### Development Environment
+## Development Environment
 
 + Webpack
 + Babel
@@ -41,7 +41,7 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 
 While Gulp is an easier to use syntax, Webpack provides a more professional approach and is quickly gaining market share.
 
-### Client
+## Client
 
 + React v0.14
 + Flux Architecture with Immutable and Alt
@@ -55,7 +55,7 @@ alt is a wrapper on flux. I found alt's implementation to be clean and simple co
 
 For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a more powerful alternative for React's TransitionGroup.
 
-## Installation
+# Installation
 
 1. Install npm
 1. `npm install`
@@ -91,7 +91,7 @@ Or run `npm run production` to run the server in production mode, without lintin
 `/server/routes.js` creates the node server's routing
 `/server/view.ejs` is the HTML view for the React's single-page application
 
-## How to Contribute:
+# How to Contribute
 
 1. Any suggestions/improvements/comments/bugs can be in the form of Pull Requests, or creating an issue.
 1. Coding guidelines:
@@ -106,6 +106,6 @@ Or run `npm run production` to run the server in production mode, without lintin
 
 [react-flux-starter](https://github.com/heroku/react-flux-starter) - Flux, React, Less, Gulp, Node, Heroku
 
-# License
+## License
 
 MIT

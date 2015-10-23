@@ -21,7 +21,7 @@ class Store {
   }
 
   handleHover(hoverKey) {
-    this.layout = this.layout.set('hover', hoverKey);
+    this.layout = this.layout.set('hoverKey', hoverKey);
     this.emitChange();
   }
   handleResize(newSize) {

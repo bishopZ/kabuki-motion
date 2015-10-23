@@ -4,20 +4,29 @@ import _ from 'lodash';
 
 class Actions {
 
-  updateHover(hoverId) {
-    this.dispatch(hoverId);
+  constructor(){
+    // debounce handlers to prevent jitteriness
+    this.updateHover = _.debounce(this.updateHover, 10);
+    this.updateWindowSize = _.debounce(this.updateWindowSize, 100);
+    this.updateWheel = _.debounce(this.updateWheel, 100);
   }
+
+  updateHover(hoverId) {
+    var self = this;
+    self.dispatch(hoverId);
+  }
+
   updateWindowSize() {
     var self = this;
-    _.defer(function(){
-      self.dispatch({
-        height: $(window).height(),
-        width: $(window).width()
-      });
-    }, 100);
+    self.dispatch({
+      height: $(window).height(),
+      width: $(window).width()
+    });
   }
+
   updateWheel(event) {
-    this.dispatch(event);
+    var self = this;
+    self.dispatch(event);
   }
 
 }

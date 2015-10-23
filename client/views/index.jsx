@@ -2,6 +2,7 @@ import Actions from '../actions/actions';
 import React from 'react';
 import Store from '../stores/store';
 import ThumbnailSet from 'components/thumbnailSet';
+import _ from 'lodash';
 
 // Main Controller-View
 
@@ -24,39 +25,45 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    const page = this.state.layout;
-    const thumbnailWidth = page.get('width') / page.get('thumbnailsPerRow');
-    let items = [
-      {
-        src: 'images/healerThumb.jpg',
-        linkTo: 'healer',
-        hover: false
-      },
-      {
-        src: 'images/seerThumb.jpg',
-        linkTo: 'seer',
-        hover: false
-      },
-      {
-        src: 'images/meleteThumb.jpg',
-        linkTo: 'melete',
-        hover: false
-      }
-    ];
-    var hover = page.get('hover');
-    if (hover !== false) {
-      items[hover].hover = true;
+    const layout = this.state.layout;
+    const thumbnailWidth = layout.get('width') / layout.get('thumbnailsPerRow');
+
+    // reset hover
+    this.items = _.map(this.items, function(item){ item.hover = false; return item; });
+
+    // set current hover item
+    var hoverKey = layout.get('hoverKey');
+    if (hoverKey !== false && this.items[hoverKey]) {
+      this.items[hoverKey].hover = true;
     }
 
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12">
-            <ThumbnailSet width={thumbnailWidth} items={items} />
+            <ThumbnailSet width={thumbnailWidth} children={this.items} />
           </div>
         </div>
       </div>
     );
-  }
+  },
+
+  items: [
+    {
+      src: 'images/healerThumb.jpg',
+      linkTo: 'healer',
+      hover: false
+    },
+    {
+      src: 'images/seerThumb.jpg',
+      linkTo: 'seer',
+      hover: false
+    },
+    {
+      src: 'images/meleteThumb.jpg',
+      linkTo: 'melete',
+      hover: false
+    }
+  ]
 });
 

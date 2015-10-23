@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 module.exports = React.createClass({
@@ -7,7 +6,7 @@ module.exports = React.createClass({
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12">
-            Not Found
+            <h4>Not Found</h4>
           </div>
         </div>
       </div>

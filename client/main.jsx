@@ -8,6 +8,8 @@ import 'styles/main.scss';
 // Main entry-point 
 $(function() {
 
+  const target = $('#app')[0];
+
   const Index = require('./views/index.jsx');
   const Healer = require('./views/healer.jsx');
   const Seer = require('./views/seer.jsx');
@@ -24,7 +26,7 @@ $(function() {
       <Route path="melete" component={Melete} />
       <Route path="*" component={NotFound} />
     </Router>
-    , $('#app')[0]
+    , target
   );
 
 });         

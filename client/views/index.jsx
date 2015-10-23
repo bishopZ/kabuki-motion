@@ -1,5 +1,5 @@
-import Actions from '../actions/actions';
 import React from 'react';
+import Actions from '../actions/actions';
 import Store from '../stores/store';
 import ThumbnailSet from 'components/thumbnailSet';
 import _ from 'lodash';
@@ -25,8 +25,13 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    const layout = this.state.layout;
+    const {layout} = this.state;
     const thumbnailWidth = layout.get('width') / layout.get('thumbnailsPerRow');
+
+    // cut-off switch for browser size
+    if (layout.get('height') < 300 || layout.get('width') < 400) {
+      return (<h4>Too Small</h4>);
+    }
 
     // reset hover
     this.items = _.map(this.items, function(item){ item.hover = false; return item; });

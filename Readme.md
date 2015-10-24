@@ -11,11 +11,11 @@ Kabuki-motion is a starter project for publishing a single-page web app with web
 
 The react application comes pre-built with one-directional flux architecture and example components that make use of the React-Motion library.
 
-The aim of this repo is to incorporate the best practices to building a non-trivial apps with Reactjs v0.14 that include Heroku support.
+The aim of this repo is to incorporate the best practices to building non-trivial apps with Reactjs v0.14 that include Heroku support.
 
 Other boilerplates that include Heroku support also require the MongoDB addon, which is free now, but may not be in the future. This library does not require any Heroku addons.
 
-| React + Flux (Alt) + Immutable + Node/Express + Heroku |
+| Immutable + React + Flux + Node + Heroku |
 
 ## Heroku Demo Site
 
@@ -53,7 +53,7 @@ alt is a wrapper on flux. I found alt's implementation to be clean and simple co
 
 #### Why React-Motion?
 
-For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a more powerful alternative for React's TransitionGroup.
+For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a powerful alternative to React's TransitionGroup.
 
 # Installation
 

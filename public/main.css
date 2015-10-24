@@ -22,27 +22,17 @@ h4 {
   font-size: 44px;
 }
 
-.opaque--false__29W0A > span {
-  opacity: 0;
+img {
+  width: 100%;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.opaque--true__uNiY6 > span {
-  opacity: 1;
-}
-
-@-webkit-keyframes move__3wkzg {
-  from {
-    transfrom: translateY(0px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(20px);
-    opacity: 1;
-  }
-}
-
-.move__3wkzg {
-  -webkit-animation: move__3wkzg 1s ease 2.5s;
+.blur__2A90w {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
 }
 
 /*# sourceMappingURL=main.css.map*/

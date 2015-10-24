@@ -11,6 +11,11 @@ class Actions {
     this.updateWheel = _.debounce(this.updateWheel, 100);
   }
 
+  imageLoaded(id) {
+    var self = this;
+    self.dispatch(id);
+  }
+
   updateHover(hoverId) {
     var self = this;
     self.dispatch(hoverId);

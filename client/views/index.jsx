@@ -2,7 +2,6 @@ import React from 'react';
 import Actions from '../actions/actions';
 import Store from '../stores/store';
 import ThumbnailSet from 'components/thumbnailSet';
-import _ from 'lodash';
 
 // Main Controller-View
 
@@ -25,7 +24,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    const {layout} = this.state;
+    const {layout, items} = this.state;
     const thumbnailWidth = layout.get('width') / layout.get('thumbnailsPerRow');
 
     // cut-off switch for browser size
@@ -33,42 +32,15 @@ module.exports = React.createClass({
       return (<h4>Too Small</h4>);
     }
 
-    // reset hover
-    this.items = _.map(this.items, function(item){ item.hover = false; return item; });
-
-    // set current hover item
-    var hoverKey = layout.get('hoverKey');
-    if (hoverKey !== false && this.items[hoverKey]) {
-      this.items[hoverKey].hover = true;
-    }
-
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12">
-            <ThumbnailSet width={thumbnailWidth} children={this.items} />
+            <ThumbnailSet width={thumbnailWidth} children={items} />
           </div>
         </div>
       </div>
     );
-  },
-
-  items: [
-    {
-      src: 'images/healerThumb.jpg',
-      linkTo: 'healer',
-      hover: false
-    },
-    {
-      src: 'images/seerThumb.jpg',
-      linkTo: 'seer',
-      hover: false
-    },
-    {
-      src: 'images/meleteThumb.jpg',
-      linkTo: 'melete',
-      hover: false
-    }
-  ]
+  }
 });
 

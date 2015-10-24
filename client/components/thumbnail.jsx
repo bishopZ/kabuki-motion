@@ -7,13 +7,13 @@ import {Link} from 'react-router';
 module.exports = React.createClass({
 
   propTypes: {
-    key: PropTypes.number,
     id: PropTypes.number,
     src: PropTypes.string,
     linkTo: PropTypes.string,
     width: PropTypes.number,
     index: PropTypes.number,
-    hover: PropTypes.bool
+    hover: PropTypes.bool,
+    loaded: PropTypes.bool
   },
 
   render: function() {
@@ -26,7 +26,8 @@ module.exports = React.createClass({
       left: width * index,
       position: 'absolute',
       userSelect: 'none',
-      WebkitUserSelect: 'none'
+      WebkitUserSelect: 'none',
+      zIndex: 1
     };
 
     var destination = _.extend({}, original);
@@ -47,27 +48,42 @@ module.exports = React.createClass({
       return spring(value, [120, 17]);
     });
 
-    return (
-      <Link to={'/' + linkTo}>
-        <Motion style={springDestination} >
+    var rendered = (
+      <Image
+        {...other}
+        className="thumbnail"
+        style={destination} >
+        <div></div>
+      </Image>
+    );
+
+    if (hover) {
+      rendered = (
+        <Motion defaultStyle={original} style={springDestination} >
         {
           function(styles) {
-            if (hover) {
-              styles.zIndex = 2;
-            } else {
-              styles.zIndex = 1;
-            }
+            styles.zIndex = 2;
             return (
-              <Image
-                {...other}
-                className="thumbnail"
-                style={styles} />
+              <div>
+                <Image
+                  {...other}
+                  className="thumbnail"
+                  style={styles} >
+                  <div></div>
+                </Image>
+              </div>
             );
           }
         }
         </Motion>
+      );
+    } 
+
+    return (
+      <Link to={'/' + linkTo}>
+        {rendered}        
       </Link>
     );
-    
+   
   }
 });

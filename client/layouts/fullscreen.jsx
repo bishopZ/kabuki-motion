@@ -2,6 +2,10 @@ import React, {PropTypes} from 'react';
 import {Motion, spring} from 'react-motion';
 import Image from '../components/image';
 
+/* 
+  Layout View: Renders a single fullscreen image.
+  */
+
 var Fullscreen = React.createClass({
   
   propTypes: {

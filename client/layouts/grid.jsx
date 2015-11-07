@@ -4,6 +4,10 @@ import {Motion} from 'react-motion';
 import {Link} from 'react-router';
 import Image from '../components/image';
 
+/* 
+  Layout View: Renders a grid of thumbnails.
+  */
+
 var Grid = React.createClass({
   
   propTypes: {

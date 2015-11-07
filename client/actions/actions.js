@@ -2,6 +2,11 @@ import alt from 'dispatcher';
 import $ from 'jquery';
 import _ from 'lodash';
 
+/* 
+  Actions: Recieves events from components and dispatches them
+    to the Store.
+  */
+
 class Actions {
 
   constructor(){

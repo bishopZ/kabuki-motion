@@ -4,6 +4,13 @@ import Actions from '../actions/actions';
 import $ from 'jquery';
 import pagesData from './pages';
 
+/* 
+  Data Store
+
+  reads in data from pages.js.
+  responds to Actions.
+  */
+
 class Store {
 
   constructor() {

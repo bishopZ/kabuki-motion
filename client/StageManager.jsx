@@ -6,6 +6,14 @@ import NotFound from './layouts/route-not-found';
 import Grid from './layouts/grid.jsx';
 import Fullscreen from './layouts/fullscreen.jsx';
 
+/* 
+  Main View-Controller
+
+  Re-renders when the data in the Store changes.
+  Interprests the route and invokes the correct Layout.
+  
+  */
+
 module.exports = React.createClass({
 
   mixins: [ Lifecycle ],

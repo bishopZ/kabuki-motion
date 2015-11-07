@@ -2,6 +2,10 @@ import React, {PropTypes} from 'react';
 import Actions from '../actions/actions';
 import ImageLoader from 'react-imageloader';
 
+/* 
+  Component: Renders an image with a preloader.
+  */
+
 module.exports = React.createClass({
 
   propTypes: {

@@ -6,11 +6,13 @@ import 'styles/main.scss';
 import StageManager from './StageManager';
 
 /* 
-  This is the Main entry-point.
+  This is the Main entry-point for the React app.
   
   We are using react-router purely for the browser history, which creates
   a single-page application. StageManager does custom routing based on 
   the pages in "/stores/pages.js".
+
+  Sends route to StageManager.jsx
 */
 
 const target = document.getElementById('app');

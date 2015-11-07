@@ -1,6 +1,10 @@
 import {spring} from 'react-motion';
 import _ from 'underscore';
 
+/* 
+  A helper to get React-Motion to render nested property lists. 
+  */
+  
 module.exports = {
 
   prepareMotionProperties: function(items){

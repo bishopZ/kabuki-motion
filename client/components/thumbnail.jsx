@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import {Motion, spring} from 'react-motion';
+import {Link} from 'react-router';
 import _ from 'underscore';
 import Image from 'components/image';
-import {Link} from 'react-router';
 
 module.exports = React.createClass({
 

@@ -11,27 +11,27 @@ class Actions {
     this.updateWheel = _.debounce(this.updateWheel, 100);
   }
 
-  imageLoaded(id) {
-    var self = this;
-    self.dispatch(id);
-  }
-
   updateHover(hoverId) {
-    var self = this;
-    self.dispatch(hoverId);
+    this.dispatch(hoverId);
   }
 
   updateWindowSize() {
-    var self = this;
-    self.dispatch({
+    this.dispatch({
       height: $(window).height(),
       width: $(window).width()
     });
   }
 
   updateWheel(event) {
-    var self = this;
-    self.dispatch(event);
+    this.dispatch(event);
+  }
+
+  imageLoaded(id) {
+    this.dispatch(id);
+  }
+
+  changeLocation(path){
+    this.dispatch(path);
   }
 
 }

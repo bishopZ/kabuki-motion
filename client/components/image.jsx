@@ -5,21 +5,31 @@ import ImageLoader from 'react-imageloader';
 module.exports = React.createClass({
 
   propTypes: {
-    id: PropTypes.number,
+    id: React.PropTypes.shape({
+      page: PropTypes.string,
+      index: PropTypes.number
+    }),
     src: PropTypes.string,
     style: PropTypes.object,
     className: PropTypes.string,
     loaded: PropTypes.bool
   },
   onEnter: function(){
-    Actions.updateHover(this.props.id);
+    Actions.updateHover({
+      hover: this.props.id.index, 
+      page: this.props.id.page
+    });
   },
   onLeave: function(){
-    Actions.updateHover(false);
+    Actions.updateHover({
+      hover: false, 
+      page: this.props.id.page
+    });
   },
   onLoaded: function(){
     Actions.imageLoaded(this.props.id);
   },
+  
   render: function() {
     if (this.props.loaded) {
       return this.wrapper('loaded', <img src={this.props.src} />);
@@ -45,6 +55,6 @@ module.exports = React.createClass({
     );
   },
   preloader: function(){
-    return (<div></div>);
+    return (<h4>Loading</h4>);
   }
 });

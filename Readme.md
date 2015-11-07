@@ -69,7 +69,7 @@ For 95% of use-cases of animating components, we don't have to resort to using h
 1. in a new terminal window `npm start` to run the server in development mode
 1. Goto http://localhost:5000 in your browser
 
-Or run `npm run production` to run the server in production mode, without linting and sourcemaps. The raw framework is about 250k, everything else is content.
+Or run `npm run production` to run the server in production mode, without linting and source maps. The raw framework is about 250k, everything else is content.
 
 ## Running the Server on the Web
 
@@ -84,7 +84,7 @@ Or run `npm run production` to run the server in production mode, without lintin
 `/client` contains the react files that construct the site. Run webpack while editing these files to see your changes live in the browser.
 `/client/main.jsx` is the main point of entry for the React application.
 
-`/public` contains the public, static resources served by the server, and the rendered application javascript/css.
+`/public` contains the public, static resources served by the server, and the rendered application javascript and css files.
 
 `/server` contains files related to the node server.
 `/server/app.js` creates the node server.

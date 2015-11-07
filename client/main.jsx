@@ -1,32 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
-import Router, { Route } from 'react-router';
+import Router, {Route} from 'react-router';
 import 'styles/main.scss';
+import StageManager from './StageManager';
 
-// Main entry-point 
-$(function() {
+/* 
+  This is the Main entry-point.
+  
+  We are using react-router purely for the browser history, which creates
+  a single-page application. StageManager does custom routing based on 
+  the pages in "/stores/pages.js".
+*/
 
-  const target = $('#app')[0];
+const target = document.getElementById('app');
+var history = createBrowserHistory();
 
-  const Index = require('./views/index.jsx');
-  const Healer = require('./views/healer.jsx');
-  const Seer = require('./views/seer.jsx');
-  const Melete = require('./views/melete.jsx');
-  const NotFound = require('./views/route-not-found.jsx');
-
-  var history = createBrowserHistory();
-
-  ReactDOM.render(
-    <Router history={history}>
-      <Route path="/" component={Index} />
-      <Route path="healer" component={Healer} />
-      <Route path="seer" component={Seer} />
-      <Route path="melete" component={Melete} />
-      <Route path="*" component={NotFound} />
-    </Router>
-    , target
-  );
-
-});         
+ReactDOM.render(
+  <Router history={history}>
+    <Route path="*" component={StageManager} />
+  </Router>
+  , target
+);

@@ -15,7 +15,7 @@ The aim of this repo is to incorporate the best practices to building non-trivia
 
 Other boilerplates that include Heroku support also require the MongoDB addon, which is free now, but may not be in the future. This library does not require any Heroku addons.
 
-| Immutable + React + Flux + Node + Heroku |
+| React + Redux + WebPack + Heroku |
 
 ## Heroku Demo Site
 
@@ -44,12 +44,12 @@ While Gulp is an easier to use syntax, Webpack provides a more professional appr
 ## Client
 
 + React v0.14
-+ Flux Architecture with Immutable and Alt
++ Flux Architecture with Redux
 + React-Motion for preformant animation
 
-#### Why alt?
+#### Why redux?
 
-alt is a wrapper on flux. I found alt's implementation to be clean and simple compared to flux with much the same speed ratings. 
+After working with both redux and alt, I found redux more difficult to use, but providing specific advantages. Redux's reducers provide a consistent and scalable place for the data juggling logic that alt leaves unorganized in various data Store. In the long term, redux is more scalable because it has better separation of concerns.
 
 #### Why React-Motion?
 
@@ -82,7 +82,7 @@ Or run `npm run production` to run the server in production mode, without lintin
 ## Directories
 
 `/client` contains the react files that construct the site. Run webpack while editing these files to see your changes live in the browser.
-`/client/main.jsx` is the main point of entry for the React application.
+`/client/App.jsx` is the main point of entry for the React application.
 
 `/public` contains the public, static resources served by the server, and the rendered application javascript and css files.
 

@@ -26,9 +26,13 @@ img {
   width: 100%;
 }
 
-.blur__2A90w {
+.blur {
   -webkit-filter: blur(3px);
   filter: blur(3px);
+}
+
+.gridItem {
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map*/

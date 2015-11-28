@@ -31,7 +31,7 @@ var commonConfiguration = {
   name: "browser",
   context: path.join(__dirname, "..", "client"),
   entry: {
-    application: "main"
+    application: "App"
   },
   output: {
     // The output directory as absolute path
@@ -52,7 +52,7 @@ var commonConfiguration = {
       },
       { 
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?module&localIdentName=[local]__[hash:base64:5]' +
+        loader: ExtractTextPlugin.extract('style', 'css?module&localIdentName=[local]' +
           '&sourceMap!sass?sourceMap&outputStyle=expanded' +
           '&includePaths[]=' + (path.resolve(__dirname, '../node_modules'))),
       }

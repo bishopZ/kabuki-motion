@@ -70,7 +70,7 @@ var commonConfiguration = {
             
 };
 
-console.log('node environment:' + process.env.NODE_ENV);
+console.log('node environment: ' + process.env.NODE_ENV);
 var config;
 
 // The configuration for production

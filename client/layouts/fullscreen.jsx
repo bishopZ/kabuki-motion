@@ -1,40 +1,53 @@
-import React, {PropTypes} from 'react';
-import {Motion, spring} from 'react-motion';
+import React, { PropTypes } from 'react';
+import _ from 'underscore';
 import Image from '../components/image';
+import ImageLoader from '../components/imageLoader';
+import { Motion, spring } from 'react-motion';
 
-/* 
-  Layout View: Renders a single fullscreen image.
-  */
+var MainItem = ImageLoader(Image);
 
 var Fullscreen = React.createClass({
-  
+
   propTypes: {
-    page: PropTypes.object,
-    environment: PropTypes.object
+    updateWindowSize: PropTypes.func.isRequired,
+    page: PropTypes.shape({
+      items: PropTypes.array.isRequired
+    }),
+    environment: PropTypes.shape({
+      width: PropTypes.number
+    })
+  },
+  
+  componentWillMount: function(){
+    this.props.updateWindowSize();
   },
 
   render: function() {
-    var {page, environment} = this.props;
-    var springs = { width: spring(environment.get('width')) };
+    const {page, environment} = this.props;
+    const {items} = page;
+    const self = this;
+
+    var springs = _.mapObject({
+        width: environment.width || 0
+      }, function(value){
+        return spring(value);
+      }
+    );
 
     return (
-      <Motion style={springs} >{ function(animated) {
-        return ( 
-          <Image 
-            id={{
-              page: page.get('name'),
-              index: 0
-            }}
-            src={page.get('source')} 
-            loaded={page.get('items').get(0).get('loaded')}
-            className="fullscreenImage"
-            style={{ 
-              width: animated.width
-            }} /> 
+      <Motion style={springs}>{ function(animated){
+        var style = _.extend({}, animated);
+        return (
+          <MainItem 
+            id={0}
+            item={items[0]}
+            className="fullscreen"
+            style={style}
+            {...self.props} />
         );
       }}</Motion>
     );
   }
 });
 
-module.exports = Fullscreen;
+export default Fullscreen;

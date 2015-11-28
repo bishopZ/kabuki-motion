@@ -1,64 +1,28 @@
-import React, {PropTypes} from 'react';
-import Actions from '../actions/actions';
-import ImageLoader from 'react-imageloader';
+import React, { PropTypes } from 'react';
 
 /* 
-  Component: Renders an image with a preloader.
+  Component: Renders an image 
   */
 
-module.exports = React.createClass({
+var Image = React.createClass({
 
   propTypes: {
-    id: React.PropTypes.shape({
-      page: PropTypes.string,
-      index: PropTypes.number
+    item: PropTypes.shape({
+      source: PropTypes.string.isRequired
     }),
-    src: PropTypes.string,
     style: PropTypes.object,
-    className: PropTypes.string,
-    loaded: PropTypes.bool
-  },
-  onEnter: function(){
-    Actions.updateHover({
-      hover: this.props.id.index, 
-      page: this.props.id.page
-    });
-  },
-  onLeave: function(){
-    Actions.updateHover({
-      hover: false, 
-      page: this.props.id.page
-    });
-  },
-  onLoaded: function(){
-    Actions.imageLoaded(this.props.id);
+    className: PropTypes.string
   },
   
   render: function() {
-    if (this.props.loaded) {
-      return this.wrapper('loaded', <img src={this.props.src} />);
-    }
     return (
-      <ImageLoader
-        src={this.props.src}
-        wrapper={this.wrapper}
-        preloader={this.preloader}
-        onLoad={this.onLoaded} />
+      <img 
+        className={this.props.className}
+        src={this.props.item.source} 
+        style={this.props.style} />
     );
-  },
-  wrapper: function(classNames, children){
-    return (
-      <div
-        {...this.props}
-        classNames={classNames}
-        onMouseEnter={this.onEnter} 
-        onMouseLeave={this.onLeave}
-      >
-        {children}
-      </div>
-    );
-  },
-  preloader: function(){
-    return (<h4>Loading</h4>);
   }
+
 });
+
+module.exports = Image;

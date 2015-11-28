@@ -19,15 +19,11 @@ h4 {
   left: 7%;
   top: 0;
   font-weight: normal;
-  font-size: 44px;
+  font-size: 34px;
 }
 
 img {
   width: 100%;
-  -webkit-filter: blur(0px);
-  filter: blur(0px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 .blur__2A90w {

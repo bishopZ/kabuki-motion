@@ -1,100 +1,111 @@
-import React, {PropTypes} from 'react';
-import MotionHelper from '../mixins/motionHelper';
-import {Motion} from 'react-motion';
-import {Link} from 'react-router';
+import React, { PropTypes } from 'react';
 import Image from '../components/image';
+import ImageLoader from '../components/imageLoader';
+import ImageHover, { applyHover } from '../components/imageHover';
+import _ from 'underscore';
+import { Link } from 'react-router';
+import { Motion, spring } from 'react-motion';
 
 /* 
   Layout View: Renders a grid of thumbnails.
   */
 
+var GridItem = ImageHover(ImageLoader(Image)); // more future-proof than a mixin
+
 var Grid = React.createClass({
-  
+
   propTypes: {
-    page: PropTypes.object,
-    environment: PropTypes.object
+    addAnimatingProperties: PropTypes.func,
+    updateAnimateProperties: PropTypes.func,
+    environment: PropTypes.shape({
+      width: PropTypes.number
+    }),
+    page: PropTypes.shape({
+      items: PropTypes.array.isRequired
+    })
+  },
+
+  componentWillMount: function(){
+    this.props.addAnimatingProperties(this.animates);
+  },
+
+  componentWillReceiveProps: function(props){
+
+    // update the position of everything
+    const {page, environment} = props;
+    const {items, layout} = page;
+    const {width} = environment;
+
+    _.each(items, function(item, index){
+      var size = width / layout.columns;
+      var updatedProperties = {
+        height: size,
+        width: size,
+        x: (index % layout.columns) * size,
+        y: Math.floor(index / layout.columns) * size,
+        z: 1
+      };
+      if (item.hover === true) {
+        updatedProperties = applyHover(updatedProperties);
+      }
+      props.updateAnimateProperties(index, updatedProperties);
+    });
+
   },
 
   render: function() {
-    const {page, environment} = this.props;
-    var items = this.gridLayout(page, environment);
-    items = this.updateHoverStates(items);
+    const {page} = this.props;
+    const {items} = page;
+    const self = this;
 
-    var {propKeyMap, springs} = MotionHelper.prepareMotionProperties(items);
+    if (items.length < 1 || !items[0].hasOwnProperty('animates')){
+      return (<div><h4>Loading...</h4></div>);
+    }
+
     return (
-      <Motion style={springs}>{ function(animated) {
-        var mappedProperties = MotionHelper.extractMotionProperties(propKeyMap, animated);
-        return (
-          <div className="row">
-            {items.map(function(item, index) {
-              var animations = mappedProperties[index];
-              return (
-                <div key={index} className="column">
-                  <Link to={item.get('link')}>
-                    <Image 
-                      id={{
-                        page: page.get('name'),
-                        index: index
-                      }}
-                      src={item.get('source')} 
-                      loaded={item.get('loaded')}
-                      className="gridImage"
-                      style={{ 
-                        top: animations.y,
-                        left: animations.x,
-                        height: animations.height,
-                        width: animations.width,
-                        position: 'absolute',
-                        zIndex: Math.ceil(animations.z) // chrome only renders integers
-                      }} />
-                  </Link>
-                </div>
-              );
-            })}
-          </div> 
-        );
-      }}</Motion>
+      <div className="row">
+          {_.map(items, function(item, index) {
+              
+            var springs = _.mapObject(item.animates, function(value){
+              return spring(value);
+            });
+            
+            return (
+              <Motion key={index} style={springs}>{ function(animating){
+                var style = {
+                  height: animating.height,
+                  width: animating.width,
+                  left: animating.x,
+                  top: animating.y,
+                  zIndex: Math.floor(animating.z)
+                };
+                return (
+                  <div className="column">
+                    <Link to={item.link}>
+                      <GridItem 
+                        id={index}
+                        item={item}
+                        className="gridItem"
+                        style={style}
+                        {...self.props} />
+                    </Link>
+                  </div>
+                );
+              }}</Motion>
+            );
+          })}
+      </div>
     );
   },
 
-  gridLayout: function(page, environment){
-    var numColumns = page.get('columns');
-    var rowCount = 0;
-    var itemWidth = environment.get('width') / numColumns;
-    var items = page.get('items').map(function(item, index){
-      var columnCount = index % numColumns;
-      var newItem = item.set('animating', {
-        y: itemWidth * rowCount,
-        x: itemWidth * columnCount,
-        height: itemWidth,
-        width: itemWidth,
-        z: 1
-      });
-      if (columnCount === numColumns - 1) { rowCount++; }
-      return newItem;
-    });
-    return items;
-  },
-
-  updateHoverStates: function(items){
-    return items.map((item)=>{
-      if (item.get('hover') !== false){
-        var positions = item.get('animating');
-        var hoverProportion = 0.25;
-        var hoverDistance = positions.width * hoverProportion;
-        return item.set('animating', {
-          y: positions.y - (hoverDistance / 2),
-          x: positions.x - (hoverDistance / 2),
-          height: positions.height + hoverDistance,
-          width: positions.width + hoverDistance,
-          z: 20
-        });
-      }
-      return item;
-    });
+  animates: {
+    x: 150,
+    y: 200, 
+    z: 1,
+    height: 5,
+    width: 5
   }
 
 });
 
-module.exports = Grid;
-
+export default Grid;

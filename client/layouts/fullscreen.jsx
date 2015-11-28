@@ -6,7 +6,7 @@ import { Motion, spring } from 'react-motion';
 
 var MainItem = ImageLoader(Image);
 
-var Fullscreen = React.createClass({
+var FullScreen = React.createClass({
 
   propTypes: {
     updateWindowSize: PropTypes.func.isRequired,
@@ -48,6 +48,7 @@ var Fullscreen = React.createClass({
       }}</Motion>
     );
   }
+
 });
 
-export default Fullscreen;
+export default FullScreen;

@@ -39943,8 +39943,8 @@
 	
 	var MainItem = (0, _componentsImageLoader2['default'])(_componentsImage2['default']);
 	
-	var Fullscreen = _react2['default'].createClass({
-	  displayName: 'Fullscreen',
+	var FullScreen = _react2['default'].createClass({
+	  displayName: 'FullScreen',
 	
 	  propTypes: {
 	    updateWindowSize: _react.PropTypes.func.isRequired,
@@ -39988,9 +39988,10 @@
 	      }
 	    );
 	  }
+	
 	});
 	
-	exports['default'] = Fullscreen;
+	exports['default'] = FullScreen;
 	module.exports = exports['default'];
 
 /***/ },

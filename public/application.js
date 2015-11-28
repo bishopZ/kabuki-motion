@@ -38087,14 +38087,14 @@
 	
 	var _layoutsGrid2 = _interopRequireDefault(_layoutsGrid);
 	
-	var _layoutsFullScreen = __webpack_require__(283);
+	var _layoutsFullscreenPage = __webpack_require__(288);
 	
-	var _layoutsFullScreen2 = _interopRequireDefault(_layoutsFullScreen);
+	var _layoutsFullscreenPage2 = _interopRequireDefault(_layoutsFullscreenPage);
 	
 	var Layouts = {
 	  NotFound: _layoutsNotFound2['default'],
 	  Grid: _layoutsGrid2['default'],
-	  FullScreen: _layoutsFullScreen2['default']
+	  FullScreen: _layoutsFullscreenPage2['default']
 	};
 	
 	module.exports = Layouts;
@@ -39910,7 +39910,18 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 283 */
+/* 283 */,
+/* 284 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"blur":"blur","gridItem":"gridItem"};
+
+/***/ },
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39993,13 +40004,6 @@
 	
 	exports['default'] = FullScreen;
 	module.exports = exports['default'];
-
-/***/ },
-/* 284 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"blur":"blur","gridItem":"gridItem"};
 
 /***/ }
 /******/ ]);

@@ -13,8 +13,7 @@
     "webpack",
     "react-motion",
     "flux",
-    "alt",
-    "animation",
+    "redux",
     "kabuki",
     "animation",
     "web-animation"

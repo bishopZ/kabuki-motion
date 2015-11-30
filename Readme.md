@@ -5,6 +5,10 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+# New in version 0.0.4: Redux!
+
+After working with both redux and alt, I found redux more difficult to use, but providing specific advantages. Redux's reducers provide a consistent and scalable place for the data juggling logic that alt leaves unorganized in various data stores. In the long term, redux is more scalable because it has better separation of concerns.
+
 # Motivation
 
 Kabuki-motion is a starter project for publishing a single-page web app with web animators in mind. It creates both a react/flux development environment and live production server.
@@ -47,27 +51,25 @@ While Gulp is an easier to use syntax, Webpack provides a more professional appr
 + Flux Architecture with Redux
 + React-Motion for preformant animation
 
-#### Why redux?
-
-After working with both redux and alt, I found redux more difficult to use, but providing specific advantages. Redux's reducers provide a consistent and scalable place for the data juggling logic that alt leaves unorganized in various data Store. In the long term, redux is more scalable because it has better separation of concerns.
-
 #### Why React-Motion?
 
 For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a powerful alternative to React's TransitionGroup.
 
 # Installation
 
-1. Install npm
+1. Install node.js and the heroku toolbelt
+1. in a new terminal window, run `git clone https://github.com/bishopZ/kabuki-motion.git`
+1. `cd kabuki-motion`
 1. `npm install`
 1. `npm run build` this will build the files one time
 1. `npm start` to run the server in development mode
-1. Goto http://localhost:5000 in your browser
+1. Goto `http://localhost:5000` in your browser
 
 ## Running the Local Development Environment
 
 1. `npm run watch` to run webpack in watch mode
-1. in a new terminal window `npm start` to run the server in development mode
-1. Goto http://localhost:5000 in your browser
+1. in a new terminal window, run `npm start` to run the server in development mode
+1. Goto `http://localhost:5000` in your browser
 
 Or run `npm run production` to run the server in production mode, without linting and source maps. The raw framework is about 250k, everything else is content.
 

@@ -5,7 +5,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-# New in version 0.0.4: Redux!
+# New in v0.0.4: Redux!
 
 After working with both redux and alt, I found redux more difficult to use, but providing specific advantages. Redux's reducers provide a consistent and scalable place for the data juggling logic that alt leaves unorganized in various data stores. In the long term, redux is more scalable because it has better separation of concerns.
 
@@ -21,7 +21,7 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 
 | React + Redux + WebPack + Heroku |
 
-## Heroku Demo Site
+### Demo Site
 
 [http://kabuki.venicetexas.com/](http://kabuki.venicetexas.com/)
 
@@ -41,23 +41,15 @@ Other boilerplates that include Heroku support also require the MongoDB addon, w
 + ESLint
 + Uglifiy
 
-#### Why Webpack?
-
-While Gulp is an easier to use syntax, Webpack provides a more professional approach and is quickly gaining market share.
-
 ## Client
 
 + React v0.14
 + Flux Architecture with Redux
 + React-Motion for preformant animation
 
-#### Why React-Motion?
-
-For 95% of use-cases of animating components, we don't have to resort to using hard-coded easing curves and duration. Set up a stiffness and damping for your UI element, and let the magic of physics take care of the rest. This way, you don't have to worry about petty situations such as interrupted animation behavior. It also greatly simplifies the animation API and provides a powerful alternative to React's TransitionGroup.
-
 # Installation
 
-1. Install node.js and the heroku toolbelt
+1. install node.js
 1. in a new terminal window, run `git clone https://github.com/bishopZ/kabuki-motion.git`
 1. `cd kabuki-motion`
 1. `npm install`
@@ -75,7 +67,7 @@ Or run `npm run production` to run the server in production mode, without lintin
 
 ## Running the Server on the Web
 
-1. Install the heroku toolbelt
+1. install the heroku toolbelt
 1. `heroku create`
 1. `heroku apps:rename newname`
 1. `git push heroku master`
